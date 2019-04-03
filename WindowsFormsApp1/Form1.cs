@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
             int cameraRealIndex = dropdown.Items.Count - dropdown.SelectedIndex - 1;
             capture = new VideoCapture(cameraRealIndex);
             capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameWidth, 1000000);
-            capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameHeight, 10000000);
+            capture.SetCaptureProperty(Emgu.CV.CvEnum.CapProp.FrameHeight, 1000000);
             Console.WriteLine(capture.Width);
             Console.WriteLine(capture.Height);
 
@@ -82,6 +82,17 @@ namespace WindowsFormsApp1
             text_Capturing.Text = "Not Capturing";
         }
 
+
+        private void btnCapture_Image_Click(object sender, EventArgs e)
+        {
+            var img = capture.QueryFrame().ToImage<Bgr, byte>();
+            var bmp = img.Clone().Bitmap;
+            Helper.SaveImageCapture(bmp);
+            Console.WriteLine("Took Picture");
+
+
+        }
+
         private void VideoSource_NewFrameEvent(object sender, NewFrameEventArgs eventArgs)
         {
             //when using AForge
@@ -93,7 +104,6 @@ namespace WindowsFormsApp1
         private void saveImagesFromWebcam(object sender, System.EventArgs e)
         {
             var img = capture.QueryFrame().ToImage<Bgr, byte>();
-            
             var bmp = img.Clone().Bitmap;
             imgVideo.Image = bmp;
             if (capturing)
@@ -112,5 +122,7 @@ namespace WindowsFormsApp1
         {
             Application.Exit();
         }
+
+        
     }
 }

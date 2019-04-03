@@ -36,6 +36,7 @@
             this.saveButton = new System.Windows.Forms.Button();
             this.bntStop_Capture = new System.Windows.Forms.Button();
             this.text_Capturing = new System.Windows.Forms.Label();
+            this.btnCapture_Image = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgVideo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,17 +112,28 @@
             // 
             this.text_Capturing.AutoSize = true;
             this.text_Capturing.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.text_Capturing.Location = new System.Drawing.Point(235, 393);
+            this.text_Capturing.Location = new System.Drawing.Point(281, 393);
             this.text_Capturing.Name = "text_Capturing";
             this.text_Capturing.Size = new System.Drawing.Size(132, 25);
             this.text_Capturing.TabIndex = 7;
             this.text_Capturing.Text = "Not Capturing";
+            // 
+            // btnCapture_Image
+            // 
+            this.btnCapture_Image.Location = new System.Drawing.Point(482, 393);
+            this.btnCapture_Image.Name = "btnCapture_Image";
+            this.btnCapture_Image.Size = new System.Drawing.Size(113, 33);
+            this.btnCapture_Image.TabIndex = 8;
+            this.btnCapture_Image.Text = "Capture Image";
+            this.btnCapture_Image.UseVisualStyleBackColor = true;
+            this.btnCapture_Image.Click += new System.EventHandler(this.btnCapture_Image_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCapture_Image);
             this.Controls.Add(this.text_Capturing);
             this.Controls.Add(this.bntStop_Capture);
             this.Controls.Add(this.saveButton);
@@ -148,6 +160,7 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.Button bntStop_Capture;
         private System.Windows.Forms.Label text_Capturing;
+        private System.Windows.Forms.Button btnCapture_Image;
     }
 }
 

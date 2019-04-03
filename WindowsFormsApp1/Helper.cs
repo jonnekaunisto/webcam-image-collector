@@ -23,7 +23,7 @@ namespace WindowsFormsApp1
                 }
             }
             //time format is "hours.minutest.seconds.milliseconds"
-            string imageName = DateTime.Now.ToString("hh.mm.ss.ff");
+            string imageName = DateTime.Now.ToString("hh.mm.ss.fff");
             string imagePath = savePath + "\\" + imageName + ".jpg";
             Console.WriteLine(imagePath);
             
